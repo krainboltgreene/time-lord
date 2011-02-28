@@ -6,13 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "timelord"
   s.version     = Timelord::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
-
-  s.rubyforge_project = "timelord"
+  s.authors     = ["Kurtis Rainbolt-Greene"]
+  s.email       = ["kurtisrainboltgreene@gmail.com"]
+  s.homepage    = "http://github.com/krainboltgreene/timelord"
+  s.summary     = %q{Adding the time_ago_in_words method to the Ruby Time class.}
+  s.description = %q{Adding the time_ago_in_words method to the Ruby Time class.}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
