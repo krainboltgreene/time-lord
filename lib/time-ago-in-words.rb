@@ -27,21 +27,21 @@ class Time
   def get_unit(time_difference)
 
     case time_difference
-    when 0...Minute
+    when 0...Units::Minute
       :second
-    when Minute...Hour
+    when Units::Minute...Units::Hour
       :minute
-    when Hour...Day
+    when Units::Hour...Units::Day
       :hour
-    when Day...Week
+    when Units::Day...Units::Week
       :day
-    when Week...Month
+    when Units::Week...Units::Month
       :week
-    when Month...Year
+    when Units::Month...Units::Year
       :month
-    when Year...Decade
+    when Units::Year...Units::Decade
       :year
-    when Decade..Century
+    when Units::Decade..Units::Century
       :decade
     end
   end
