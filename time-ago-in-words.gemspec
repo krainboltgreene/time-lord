@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Kurtis Rainbolt-Greene"]
   s.email       = ["kurtisrainboltgreene@gmail.com"]
   s.homepage    = "http://github.com/krainboltgreene/time-ago-in-words"
-  s.summary     = %q{Adding the time_ago_in_words method to the Ruby Time class.}
-  s.description = %q{Adding the time_ago_in_words method to the Ruby Time class.}
+  s.summary     = %q{Adding the ago_in_words method to the Ruby Time class.}
+  s.description = %q{Adding the ago_in_words method to the Ruby Time class.}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
