@@ -1,7 +1,5 @@
 require 'time'
 class Time
-  alias_method :time_ago_in_words, :ago_in_words
-  alias_method :from_now_in_words, :ago_in_words
   def ago_in_words
     time = self
     time_now = Time.now.to_i
@@ -52,4 +50,6 @@ class Time
       "#{time_between / a_millennium} #{unit} ago"
     end
   end
+  alias_method :time_ago_in_words, :ago_in_words
+  alias_method :from_now_in_words, :ago_in_words
 end
