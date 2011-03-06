@@ -22,32 +22,41 @@ class Time
     a_century    = a_jubilee * 2
     a_millennium = a_jubilee * 10
     if time_between <= a_minute
-      unit = "second#{'s' unless time_between == 1}"
-      "#{time_between} #{unit} ago"
+      count = time_between
+      unit = "second#{'s' unless count == 1}"
+      "#{count} #{unit} ago"
     elsif time_between <= a_hour
-      unit = "minute#{'s' unless time_between == 1}"
-      "#{time_between / a_minute} #{unit} ago"
+      count = time_between / a_minute
+      unit = "minute#{'s' unless count == 1}"
+      "#{count} #{unit} ago"
     elsif time_between <= a_day
-      unit = "hour#{'s' unless time_between == 1}"
-      "#{time_between / a_hour} #{unit} ago"
+      count = time_between / a_hour
+      unit = "hour#{'s' unless count == 1}"
+      "#{count} #{unit} ago"
     elsif time_between <= a_week
-      unit = "day#{'s' unless time_between == 1}"
-      "#{time_between / a_day} #{unit} ago"
+      count = time_between / a_between
+      unit = "day#{'s' unless count == 1}"
+      "#{count} #{unit} ago"
     elsif time_between <= a_month
-      unit = "week#{'s' unless time_between == 1}"
-      "#{time_between / a_week} #{unit} ago"
+      count = time_between / a_week
+      unit = "week#{'s' unless count == 1}"
+      "#{count} #{unit} ago"
     elsif time_between <= a_year
-      unit = "month#{'s' unless time_between == 1}"
-      "#{time_between / a_month} #{unit} ago"
+      count = time_between / a_month
+      unit = "month#{'s' unless count == 1}"
+      "#{count} #{unit} ago"
     elsif time_between <= a_decade
-      unit = "year#{'s' unless time_between == 1}"
-      "#{time_between / a_year} #{unit} ago"
+      count = time_between / a_year
+      unit = "year#{'s' unless count == 1}"
+      "#{count} #{unit} ago"
     elsif time_between <= a_century
-      unit = "decade#{'s' unless time_between == 1}"
-      "#{time_between / a_decade} #{unit} ago"
+      count = time_between / a_decade
+      unit = "decade#{'s' unless count == 1}"
+      "#{count} #{unit} ago"
     else
-      unit = "millennium#{'s' unless time_between == 1}"
-      "#{time_between / a_millennium} #{unit} ago"
+      count = time_between / a_millennium
+      unit = "millennium#{'s' unless count == 1}"
+      "#{count} #{unit} ago"
     end
   end
   alias_method :time_ago_in_words, :ago_in_words
