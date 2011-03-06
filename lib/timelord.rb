@@ -22,31 +22,31 @@ class Time
     a_century    = a_jubilee * 2
     a_millennium = a_jubilee * 10
     if time_between <= a_minute
-      unit = "second#{'s' if time_between == a_second}"
+      unit = "second#{'s' unless time_between == a_second}"
       "#{time_between} #{unit} ago"
     elsif time_between <= a_hour
-      unit = "minute#{'s' if time_between == a_minute}"
+      unit = "minute#{'s' unless time_between == a_minute}"
       "#{time_between / a_minute} #{unit} ago"
     elsif time_between <= a_day
-      unit = "hour#{'s' if time_between == a_hour}"
+      unit = "hour#{'s' unless time_between == a_hour}"
       "#{time_between / a_hour} #{unit} ago"
     elsif time_between <= a_week
-      unit = "day#{'s' if time_between == a_day}"
+      unit = "day#{'s' unless time_between == a_day}"
       "#{time_between / a_day} #{unit} ago"
     elsif time_between <= a_month
-      unit = "week#{'s' if time_between == a_week}"
+      unit = "week#{'s' unless time_between == a_week}"
       "#{time_between / a_week} #{unit} ago"
     elsif time_between <= a_year
-      unit = "month#{'s' if time_between == a_month}"
+      unit = "month#{'s' unless time_between == a_month}"
       "#{time_between / a_month} #{unit} ago"
     elsif time_between <= a_decade
-      unit = "year#{'s' if time_between == a_year}"
+      unit = "year#{'s' unless time_between == a_year}"
       "#{time_between / a_year} #{unit} ago"
     elsif time_between <= a_century
-      unit = "decade#{'s' if time_between == a_decade}"
+      unit = "decade#{'s' unless time_between == a_decade}"
       "#{time_between / a_decade} #{unit} ago"
     else
-      unit = "millennium#{'s' if time_between == a_millennium}"
+      unit = "millennium#{'s' unless time_between == a_millennium}"
       "#{time_between / a_millennium} #{unit} ago"
     end
   end
