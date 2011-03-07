@@ -37,7 +37,7 @@ class Time
       end
     end
 
-    return unit
+    unit
   end
 
   def plural?(unit_difference)
