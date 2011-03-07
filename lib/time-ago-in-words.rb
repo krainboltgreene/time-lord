@@ -26,7 +26,6 @@ class Time
 
   private
   def get_unit(time_difference)
-
     constants = Units.constants
 
     for i in 0...constants.length
@@ -36,7 +35,7 @@ class Time
       end
     end
 
-    return unit
+    unit
   end
 
   def plural?(unit_difference)
