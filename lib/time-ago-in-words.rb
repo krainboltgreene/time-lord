@@ -30,8 +30,10 @@ class Time
 
     unit = constants.first
     0.upto(constants.length) do |i|
-      unit = constants[i]
-      break if (Units.const_get(constants[i])...Units.const_get(constants[i + 1])) === time_difference
+      if (Units.const_get(constants[i])...Units.const_get(constants[i + 1])) === time_difference
+        unit = constants[i]
+        break
+      end
     end
 
     unit
