@@ -26,14 +26,8 @@ class Time
 
   private
   def get_unit(time_difference)
-    constants = Units.constants
-
-    unit = constants.first
-    constants.each_cons(2) do |con|
-      unit = con.first
-      break if (Units.const_get(con[0])...Units.const_get(con[1])) === time_difference
+    Units.constants.each_cons(2) do |con|
+      return con.first if (Units.const_get(con[0])...Units.const_get(con[1])) === time_difference
     end
-
-    unit
   end
 end
