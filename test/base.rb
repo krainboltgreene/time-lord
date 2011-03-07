@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/helper')
 describe Time do
   describe "seconds" do
     before do
-      @past = Time.now - 30 * Units::Second
+      @past = Time.now - 30 * Time::Units::Second
     end
 
     it 'returns the correct string' do
@@ -12,7 +12,7 @@ describe Time do
 
   describe 'hours' do
     before do
-      @past = Time.now - 4 * Units::Hour
+      @past = Time.now - 4 * Time::Units::Hour
     end
 
     it 'returns the correct string' do
@@ -22,7 +22,7 @@ describe Time do
 
   describe 'days' do
     before do
-      @past = Time.now - 3 * Units::Day
+      @past = Time.now - 3 * Time::Units::Day
     end
 
     it 'returns the correct string' do
@@ -32,7 +32,7 @@ describe Time do
 
   describe 'weeks' do
     before do
-      @past = Time.now - 2 * Units::Week
+      @past = Time.now - 2 * Time::Units::Week
     end
 
     it 'returns the correct string' do
@@ -42,7 +42,7 @@ describe Time do
   
   describe 'months' do
     before do
-      @past = Time.now - 7 * Units::Month
+      @past = Time.now - 7 * Time::Units::Month
     end
 
     it 'returns the correct string' do
@@ -52,7 +52,7 @@ describe Time do
 
   describe 'years' do
     before do
-      @past = Time.now - 3 * Units::Year
+      @past = Time.now - 3 * Time::Units::Year
     end
 
     it 'returns the correct string' do
@@ -62,7 +62,7 @@ describe Time do
 
   describe 'millennium' do
     before do
-      @past = Time.now - 4 * Units::Millennium
+      @past = Time.now - 4 * Time::Units::Millennium
     end
 
     it 'returns the correct string' do
