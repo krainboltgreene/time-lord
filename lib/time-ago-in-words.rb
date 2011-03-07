@@ -10,6 +10,7 @@ module Units
   Decade     = Year    * 10
   Century    = Decade  * 10
   Millennium = Century * 10
+  Eon        = 1.0/0
 end
 
 class Time

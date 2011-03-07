@@ -59,4 +59,14 @@ describe Time do
       @past.time_ago_in_words.must_equal "3 years ago"
     end
   end
+
+  describe 'millennium' do
+    before do
+      @past = Time.now - 4 * Units::Millennium
+    end
+
+    it 'returns the correct string' do
+      @past.time_ago_in_words.must_equal "4 millenniums ago"
+    end
+  end
 end
