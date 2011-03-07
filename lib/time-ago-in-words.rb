@@ -29,11 +29,9 @@ class Time
     constants = Units.constants
 
     unit = constants.first
-    0.upto(constants.length) do |i|
-      if (Units.const_get(constants[i])...Units.const_get(constants[i + 1])) === time_difference
-        unit = constants[i]
-        break
-      end
+    constants.each_cons(2) do |con|
+      unit = con.first
+      break if (Units.const_get(con[0])...Units.const_get(con[1])) === time_difference
     end
 
     unit
