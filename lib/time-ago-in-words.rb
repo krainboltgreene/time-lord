@@ -18,7 +18,7 @@ class Time
     unit = get_unit(time_difference)
     unit_difference = time_difference / Units.const_get(unit.capitalize)
 
-    unit = unit.to_s + ('s' if plural?(time_difference))
+    unit = unit.to_s.downcase + ('s' if plural?(time_difference))
 
     "#{unit_difference} #{unit} ago"
   end
@@ -26,24 +26,19 @@ class Time
   private
   def get_unit(time_difference)
 
-    case time_difference
-    when 0...Units::Minute
-      :second
-    when Units::Minute...Units::Hour
-      :minute
-    when Units::Hour...Units::Day
-      :hour
-    when Units::Day...Units::Week
-      :day
-    when Units::Week...Units::Month
-      :week
-    when Units::Month...Units::Year
-      :month
-    when Units::Year...Units::Decade
-      :year
-    when Units::Decade..Units::Century
-      :decade
+    constants = Units.constants
+
+    unit = constants[0]
+    i = 0
+    while i < constants.length - 1
+      unit = constants[i]
+      if (Units.const_get(constants[i])...Units.const_get(constants[i + 1])) === time_difference
+        break
+      end
+      i += 1
     end
+
+    return unit
   end
 
   def plural?(unit_difference)
