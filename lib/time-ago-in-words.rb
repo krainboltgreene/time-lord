@@ -29,7 +29,6 @@ class Time
 
     constants = Units.constants
 
-    unit = constants[0]
     for i in 0...constants.length
       unit = constants[i]
       if (Units.const_get(constants[i])...Units.const_get(constants[i + 1])) === time_difference
