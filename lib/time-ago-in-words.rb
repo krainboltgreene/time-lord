@@ -13,7 +13,7 @@ class Time
     a_fortnight  = a_day     * 14
     a_month      = a_week    * 4
     a_quarter    = a_month   * 3
-    a_year       = a_month   * 24
+    a_year       = a_month   * 12
     a_olympiad   = a_year    * 4
     a_lustrum    = a_year    * 5
     a_decade     = a_lustrum * 2
