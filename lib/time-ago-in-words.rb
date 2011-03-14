@@ -18,38 +18,80 @@ class Time
   Century    = Decade  * 10
   Millennium = Century * 10
   Eon        = 1.0/0
-
-  def time_ago_in_words
-    difference = time_difference self
-    count = difference / unit_amount(unit_name(difference))
-    unit = unit_name(difference) + ('s' if difference > 1)
+  def ago_in_words
+    time = self
+    # Find the time difference between the time provided and the current time.
+    difference = get_time_difference_from time
+    # Find the smallest unit name of the time difference.
+    name = get_unit_name_from difference
+    # Find the smallest unit amount of the time difference.
+    amount = get_unit_amount_from difference
+    # Find then number of units for the time difference.
+    count = get_unit_count_from difference, amount
+    # Determine if unit name needs pluralization.
+    unit = name + ('s' if difference > 1)
+    # Print the remaining string.
     "#{count} #{unit} ago"
   end
 
-  def time_difference time
+  private
+  def get_time_difference_from time
     Time.now.to_i - time.to_i
   end
-
-  private
-  def unit_name difference
-    'second'     if Second...Minute      === difference
-    'minute'     if Minute...Hour        === difference
-    'hour'       if Hour...Day           === difference
-    'day'        if Day...Week           === difference
-    'week'       if Week...Month         === difference
-    'month'      if Month...Year         === difference
-    'year'       if Year...Decade        === difference
-    'decade'     if Decade...Century     === difference
-    'century'    if Century...Millennium === difference
-    'millennium' if Millennium...Eon     === difference
+  def get_unit_count_from difference, amount
+    difference / amount
   end
-
-  def unit_amount unit_name
-    p unit_name
-    Time.constants.map(&:to_s).map(&:downcase)
+  def get_unit_name_from difference
+    case difference
+      when Second...Minute
+        "second"
+      when Minute...Hour
+        "minute"
+      when Hour...Day
+        "hour"
+      when Day...Week
+        "day"
+      when Week...Month
+        "week"
+      when Month...Year
+        "month"
+      when Year..Decade
+        "year"
+      when Decade...Century
+        "decade"
+      when Century...Millennium
+        "century"
+      when Millennium...Eon
+        "millennium"
+      else
+        "eon"
+    end
   end
-
-  alias_method :ago_in_words, :time_ago_in_words
-  alias_method :from_now_in_words, :time_ago_in_words
-
+  def get_unit_amount_from difference
+    case difference
+      when Second...Minute
+        Second
+      when Minute...Hour
+        Minute
+      when Hour...Day
+        Hour
+      when Day...Week
+        Day
+      when Week...Month
+        Week
+      when Month...Year
+        Month
+      when Year..Decade
+        Year
+      when Decade...Century
+        Decade
+      when Century...Millennium
+        Century
+      when Millennium...Eon
+        Millennium
+      else
+        Eon
+    end
+  end
+  alias_method :time_ago_in_words, :ago_in_words
 end

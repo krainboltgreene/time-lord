@@ -1,0 +1,3 @@
+lib/time-ago-in-words.rb 1974d2097bc6054352dbc16c8a79e171524f5a9f
+lib/time-ago-in-words/units.rb da39a3ee5e6b4b0d3255bfef95601890afd80709
+lib/time-ago-in-words/version.rb 517555b8640701d41015773e93b14557e81ba7d3
