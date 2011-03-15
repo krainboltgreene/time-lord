@@ -22,6 +22,9 @@ class Time
     time = self
     # Find the time difference between the time provided and the current time.
     difference = get_time_difference_from time
+    
+    return "just now" if difference < 1
+
     # Find the smallest unit name of the time difference.
     name = get_unit_name_from difference
     # Find the smallest unit amount of the time difference.
@@ -29,7 +32,9 @@ class Time
     # Find then number of units for the time difference.
     count = get_unit_count_from difference, amount
     # Determine if unit name needs pluralization.
-    unit = name + ('s' if difference > 1)
+    unit = name
+    unit += "s" if count != 1
+
     # Print the remaining string.
     "#{count} #{unit} ago"
   end
