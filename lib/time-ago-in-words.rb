@@ -1,7 +1,6 @@
 require 'time'
 
 class Time
-
   Second     = 1
   Minute     = Second  * 60
   Hour       = Minute  * 60
@@ -21,27 +20,21 @@ class Time
   Eon        = 1.0/0
 
   def ago_in_words
-    time = self
 
     # Find the time difference between the time provided and the current time.
-    difference = get_time_difference_from time
+    difference = get_time_difference_from self
 
     # Catch less than 1 second differences.
     return "just now" if difference < 1
 
-    # Find the smallest unit name of the time difference.
-    name = get_unit_name_from difference
-
-    # Find the smallest unit amount of the time difference.
+    name   = get_unit_name_from difference
     amount = get_unit_amount_from difference
-
-    # Find then number of units for the time difference.
-    count = get_unit_count_from difference, amount
+    count  = get_unit_count_from difference, amount
 
     # Determine if unit name needs pluralization.
     name += "s" if count > 1
 
-    # Print the remaining string.
+    # Return the remaining string.
     "#{count} #{name} ago"
   end
 
@@ -57,77 +50,31 @@ class Time
 
   def get_unit_name_from difference
     case difference
-
-      when Second...Minute
-        "second"
-
-      when Minute...Hour
-        "minute"
-
-      when Hour...Day
-        "hour"
-
-      when Day...Week
-        "day"
-
-      when Week...Month
-        "week"
-
-      when Month...Year
-        "month"
-
-      when Year..Decade
-        "year"
-
-      when Decade...Century
-        "decade"
-
-      when Century...Millennium
-        "century"
-
-      when Millennium...Eon
-        "millennium"
-
-      else
-        "eon"
+      when Second...Minute      then "second"
+      when Minute...Hour        then "minute"
+      when Hour...Day           then "hour"
+      when Day...Week           then "day"
+      when Week...Month         then "week"
+      when Month...Year         then "month"
+      when Year..Decade         then "year"
+      when Decade...Century     then "decade"
+      when Century...Millennium then "century"
+      when Millennium...Eon     then "millennium"
     end
   end
 
   def get_unit_amount_from difference
     case difference
-
-      when Second...Minute
-        Second
-
-      when Minute...Hour
-        Minute
-
-      when Hour...Day
-        Hour
-
-      when Day...Week
-        Day
-
-      when Week...Month
-        Week
-
-      when Month...Year
-        Month
-
-      when Year..Decade
-        Year
-
-      when Decade...Century
-        Decade
-
-      when Century...Millennium
-        Century
-
-      when Millennium...Eon
-        Millennium
-
-      else
-        Eon
+      when Second...Minute      then Second
+      when Minute...Hour        then Minute
+      when Hour...Day           then Hour
+      when Day...Week           then Day
+      when Week...Month         then Week
+      when Month...Year         then Month
+      when Year..Decade         then Year
+      when Decade...Century     then Decade
+      when Century...Millennium then Century
+      when Millennium...Eon     then Millennium
     end
   end
 

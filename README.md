@@ -9,6 +9,13 @@ It evolved into a multi-part boost to the `Time` class.
 I changed this, obviously.
 
 
+examples
+========
+Examples:
+    >> Time.now.ago_in_words # => "just now"
+    >> Time.parse("1942-04-01").ago_in_words # => "7 decades ago"
+
+
 install
 =======
 Before gem version 0.5.0:
@@ -33,6 +40,7 @@ helpers
 =======
 * https://github.com/wolfwood
 * https://github.com/henrikh
+
 
 credits
 =======
