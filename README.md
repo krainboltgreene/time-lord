@@ -16,12 +16,18 @@ Examples:
     >> Time.parse("1942-04-01").ago_in_words # => "7 decades ago"
 
 
+future
+======
+  >> Time.yesterday
+  >> Time.last_month
+  >> Time.last_year
+  >> Time.now - 1.year
+  >> Time.now + 15.days
+  >> Time.last_month.last_day_of_the_month
+  >> Time.last_day_of_year
+
 install
 =======
-Before gem version 0.5.0:
-`gem install time-ago-in-words`
-
-After gem version 0.5.0:
 `gem install time-lord`
 
 

@@ -1,3 +1,2 @@
-lib/time-ago-in-words.rb 1974d2097bc6054352dbc16c8a79e171524f5a9f
-lib/time-ago-in-words/units.rb da39a3ee5e6b4b0d3255bfef95601890afd80709
-lib/time-ago-in-words/version.rb 517555b8640701d41015773e93b14557e81ba7d3
+lib/time-lord.rb 93a21229aaa27912f8fbaf8113232f9299a94c04
+lib/time-lord/version.rb 1d4a7d9f645c106306ef4700a69712b6ede43db0
