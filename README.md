@@ -22,9 +22,9 @@ Time.now.ago_in_words
 
 olden_times = Time.parse("1942-04-01")
 
-"I was dacing with Queen Elizabeth #{olden_times.ago_in_words} from now!"
+"I was dancing with Queen Elizabeth #{olden_times.ago_in_words} from now!"
 
-# => "I was dacing with Queen Elizabeth 7 decades ago from now!"
+# => "I was dancing with Queen Elizabeth 7 decades ago from now!"
 ```
 
 There's a lot more to come hopefully.
