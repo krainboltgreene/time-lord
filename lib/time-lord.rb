@@ -20,22 +20,21 @@ class Time
   Eon        = 1.0/0
 
   def ago_in_words
-
     # Find the time difference between the time provided and the current time.
     difference = get_time_difference_from self
 
     # Catch less than 1 second differences.
-    return "just now" if difference < 1
+    return "just now" if (-1...1) === difference
 
     name   = get_unit_name_from difference
     amount = get_unit_amount_from difference
-    count  = get_unit_count_from difference, amount
+    count  = get_unit_count_from(difference, amount).abs
 
     # Determine if unit name needs pluralization.
     name += "s" if count > 1
 
     # Return the remaining string.
-    "#{count} #{name} ago"
+    difference >= 0 ? "#{count} #{name} ago" : "in #{count} #{name}"
   end
 
   private
@@ -49,7 +48,7 @@ class Time
   end
 
   def get_unit_name_from difference
-    case difference
+    case difference.abs
       when Second...Minute      then "second"
       when Minute...Hour        then "minute"
       when Hour...Day           then "hour"
@@ -64,7 +63,7 @@ class Time
   end
 
   def get_unit_amount_from difference
-    case difference
+    case difference.abs
       when Second...Minute      then Second
       when Minute...Hour        then Minute
       when Hour...Day           then Hour
@@ -79,4 +78,6 @@ class Time
   end
 
   alias_method :time_ago_in_words, :ago_in_words
+  alias_method :distance_in_words, :ago_in_words
+  alias_method :time_distance_in_words, :ago_in_words
 end
