@@ -22,11 +22,11 @@
 # Ignores that should be in the global gitignore
 # /*.rbc
 # /.config
-# /.yardoc
+/.yardoc
 # /InstalledFiles
-# /_yardoc
+/_yardoc
 # /coverage/
-# /doc/
+/doc/
 # /lib/bundler/man/
 # /rdoc/
 # /spec/reports/
