@@ -113,7 +113,7 @@ Credits
 License
 -------
 
-Copyright (c) 2011 Kurtis Rainbolt-Greene
+Copyright (c) 2013 Kurtis Rainbolt-Greene
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
