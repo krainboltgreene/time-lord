@@ -1,22 +1,24 @@
-# -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "time-lord/version"
+# encoding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'time-lord/version'
 
-Gem::Specification.new do |s|
-  s.name        = "time-lord"
-  s.version     = TimeLord::VERSION
-  s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Kurtis Rainbolt-Greene","Simon Hørup Eskildsen"]
-  s.email       = ["kurtisrainboltgreene@gmail.com","sirup@sirupsen.com"]
-  s.homepage    = "http://github.com/krainboltgreene/time-lord#README"
-  s.summary     = %q{Adding various bonuses to the Time class.}
-  s.description = %q{This is a gem that adds a ton of extras to the Time class.}
+Gem::Specification.new do |gem|
+  gem.name          = "time-lord"
+  gem.version       = TimeLord::VERSION
+  gem.authors       = ["Kurtis Rainbolt-Greene", "Simon Hørup Eskildsen"]
+  gem.email         = ["me@kurtisrainboltgreene.name","sirup@sirupsen.com"]
+  gem.summary       = %q{Managing concepts of time and space in Ruby}
+  gem.description   = gem.summary
+  gem.homepage      = "http://krainboltgreene.github.com/time-lord"
 
+  gem.files         = `git ls-files`.split($/)
+  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.require_paths = ["lib"]
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
-
-  s.add_development_dependency "rake"
+  gem.add_development_dependency 'yard'
+  gem.add_development_dependency 'kramdown'
+  # gem.add_runtime_dependency 'gemname', '~> 1.0'
+  # gem.add_development_dependency 'gemname', '~> 1.0'
 end
