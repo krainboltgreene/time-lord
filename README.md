@@ -1,7 +1,7 @@
 time-lord
 =========
 
-**Current Version**: 0.1.5
+**Current Version**: 1.0.0
 
 `time-lord` is a gem that builds on the Time class to give more human expressions.
 It adds a lot of nifty little ideas present in Rails helpers to the time class.
