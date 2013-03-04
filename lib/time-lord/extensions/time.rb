@@ -1,4 +1,5 @@
 class Time
-  include TimeLord::Units
-
+  def ago
+    TimeLord::Time.new(self).period
+  end
 end
