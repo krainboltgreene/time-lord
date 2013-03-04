@@ -21,6 +21,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'yard'
   gem.add_development_dependency 'kramdown'
   gem.add_development_dependency 'pry'
+  gem.add_development_dependency 'coveralls'
   # gem.add_runtime_dependency 'gemname', '~> 1.0'
   # gem.add_development_dependency 'gemname', '~> 1.0'
 end
