@@ -1,7 +1,11 @@
 time-lord
 =========
 
-**Current Version**: 1.0.0
+  - [![Gem Version](https://badge.fury.io/rb/time-lord.png)](https://rubygems.org/gems/time-lord)
+  - [![Code Climate](https://codeclimate.com/github/krainboltgreene/time-lord.png)](https://codeclimate.com/github/krainboltgreene/time-lord)
+  - [![Build Status](https://travis-ci.org/krainboltgreene/time-lord.png)](https://travis-ci.org/krainboltgreene/time-lord)
+  - [![Dependency Status](https://gemnasium.com/krainboltgreene/time-lord.png)](https://gemnasium.com/krainboltgreene/time-lord)
+  - [![Coverage Status](https://coveralls.io/repos/krainboltgreene/time-lord/badge.png?branch=master)](https://coveralls.io/r/krainboltgreene/time-lord)
 
 `time-lord` is a gem that gives you more human like expressions for time and space math.
 Underneath the covers `time-lord` gives you single purpose objects for handling the more complex parts of Time & Space.
