@@ -6,33 +6,25 @@ class TestTimeLordExtentionsTime < MiniTest::Unit::TestCase
     @timestamp = Time.now
   end
 
-  def test_in_words_second
-    expected = "1 second ago"
-    actual = 1.second.ago.in_words
+  def oldstamp(minus)
+    @timestamp - minus
+  end
+
+  def test_ago_in_words_on_time
+    expected = "3 days ago"
+    actual = oldstamp(3.days).ago.in_words
     assert_equal(expected, actual)
   end
 
-  def test_in_words_plural
-    expected = "2 years ago"
-    actual = 2.years.ago.in_words
+  def test_ago_in_words_about
+    expected = "1 hour ago"
+    actual = oldstamp(100.minutes).ago.in_words
     assert_equal(expected, actual)
   end
 
-  def test_in_words_past_year
-    expected = "1 year ago"
-    actual = 1.year.ago.in_words
+  def test_ago_in_words_less_than_minute
+    expected = "15 seconds ago"
+    actual = oldstamp(15.seconds).ago.in_words
     assert_equal(expected, actual)
-  end
-
-  def test_in_words_future_year
-    expected = "1 year from now"
-    actual = 1.year.from_now.in_words
-    assert_equal(expected, actual)
-  end
-
-  def test_math
-    expected = Time.now - 2.days
-    actual = 2.days.ago.to_time
-    assert_equal(expected.to_i, actual.to_i)
   end
 end
