@@ -1,77 +1,212 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset='utf-8'>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
 
-  <title>krainboltgreene/time-lord @ GitHub</title>
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #779eec;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #886113; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #886113; }
-    h3 { text-align: center; color: #886113; }
-    a { color: #886113; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Time-lord by krainboltgreene</title>
+  </head>
 
-<body>
-  <a href="http://github.com/krainboltgreene/time-lord"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  <body>
+    <a id="forkme_banner" href="https://github.com/krainboltgreene/time-lord">View on GitHub</a>
+    <div class="shell">
 
-  <div id="container">
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Time-lord</h1>
+            <h2>time-lord is a ruby gem that adds a human DSL for time expressions</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
 
-    <div class="download">
-      <a href="http://github.com/krainboltgreene/time-lord/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/krainboltgreene/time-lord/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/krainboltgreene/time-lord/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/krainboltgreene/time-lord/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <ul>
+<li><a href="https://rubygems.org/gems/time-lord"><img src="https://badge.fury.io/rb/time-lord.png" alt="Gem Version"></a></li>
+<li><a href="https://codeclimate.com/github/krainboltgreene/time-lord"><img src="https://codeclimate.com/github/krainboltgreene/time-lord.png" alt="Code Climate"></a></li>
+<li><a href="https://travis-ci.org/krainboltgreene/time-lord"><img src="https://travis-ci.org/krainboltgreene/time-lord.png" alt="Build Status"></a></li>
+<li><a href="https://gemnasium.com/krainboltgreene/time-lord"><img src="https://gemnasium.com/krainboltgreene/time-lord.png" alt="Dependency Status"></a></li>
+<li><a href="https://coveralls.io/r/krainboltgreene/time-lord"><img src="https://coveralls.io/repos/krainboltgreene/time-lord/badge.png?branch=master" alt="Coverage Status"></a></li>
+</ul><p><code>time-lord</code> is a gem that gives you more human like expressions for time and space math.
+Underneath the covers <code>time-lord</code> gives you single purpose objects for handling the more complex parts of Time &amp; Space.
+Specifically conversion, periods between two points, and scaling.</p>
+
+<h2>Examples</h2>
+
+<p>In <code>time-lord</code> you have Period objects:</p>
+
+<div class="highlight"><pre><span class="mi">1</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">ago</span><span class="o">.</span><span class="n">class</span> <span class="c1">#=&gt; &lt;TimeLord::Period @beginning=2013-03-03 23:44:59 -0800, @ending=2013-03-04 00:44:59 -0800&gt;</span>
+</pre></div>
+
+<p>Periods, if forced into strings or integers, represent the number of seconds between the two points</p>
+
+<div class="highlight"><pre><span class="mi">1</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">ago</span><span class="o">.</span><span class="n">to_i</span> <span class="c1">#=&gt; -3600</span>
+</pre></div>
+
+<p>Obviously Periods act a lot like a Range and can be coerced into one:</p>
+
+<div class="highlight"><pre><span class="mi">1</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">ago</span><span class="o">.</span><span class="n">to_range</span> <span class="c1">#=&gt; 1362383339..1362386939</span>
+</pre></div>
+
+<p>You may have noticed the negative integer from <code>Period#to_i</code>.
+This represents the period beginning before the ending.
+The reverse comes from using <code>Period#from_now</code>:</p>
+
+<div class="highlight"><pre><span class="mi">1</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">from_now</span><span class="o">.</span><span class="n">to_i</span> <span class="c1">#=&gt; 3600</span>
+</pre></div>
+
+<p>Periods also have a special <code>Period#to_words</code> method:</p>
+
+<div class="highlight"><pre><span class="mi">1</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">ago</span><span class="o">.</span><span class="n">to_words</span> <span class="c1">#=&gt; "1 hour ago"</span>
+<span class="mi">200</span><span class="o">.</span><span class="n">minutes</span><span class="o">.</span><span class="n">ago</span><span class="o">.</span><span class="n">to_words</span> <span class="c1">#=&gt; "3 hour ago"</span>
+</pre></div>
+
+<p>Of course you can also do fun Time math:</p>
+
+<div class="highlight"><pre><span class="no">Time</span><span class="o">.</span><span class="n">now</span> <span class="c1">#=&gt; 2013-03-04 00:55:49 -0800</span>
+<span class="no">Time</span><span class="o">.</span><span class="n">now</span> <span class="o">-</span> <span class="mi">2</span><span class="o">.</span><span class="n">hours</span> <span class="c1">#=&gt; 2013-03-03 22:55:50 -0800</span>
+</pre></div>
+
+<p>Time is fun.</p>
+
+<h2>Installing</h2>
+
+<p><strong>Requirements</strong></p>
+
+<ol>
+<li>A blue telephone box (optional)</li>
+</ol><p>Like any other gem you can install it via the <code>gem</code> command:</p>
+
+<pre lang="terminal"><code>$ gem install time-lord
+</code></pre>
+
+<p>Although I suggest using <code>bundler</code>:</p>
+
+<div class="highlight"><pre><span class="n">gem</span> <span class="s1">'time-lord'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0'</span>
+</pre></div>
+
+<p><strong>Testing</strong></p>
+
+<p>To make sure you did everything right, just do the following:</p>
+
+<pre><code>$ ruby -e "1.hour.ago.to_words"
+&gt; 1 hour ago
+</code></pre>
+
+<h2>Issues &amp; Documentation</h2>
+
+<ul>
+<li><a href="https://github.com/krainboltgreene/time-lord/wiki">Documentation</a></li>
+<li><a href="https://github.com/krainboltgreene/time-lord/issues">Issues</a></li>
+</ul><p>Absolutely feel free to contribute, please!</p>
+
+<h2>Changelog</h2>
+
+<p><strong>v0.1.5</strong></p>
+
+<ul>
+<li>Changed the name of the gem, added some tests</li>
+</ul><p><strong>v0.1.0</strong></p>
+
+<ul>
+<li>I didn't track changelogs when this version was released</li>
+</ul><h2>Contributing</h2>
+
+<ul>
+<li>
+<strong>Fork</strong> the repository</li>
+<li>
+<strong>Clone the repository</strong> locally, or <strong>edit via Github</strong>
+</li>
+<li>Create a <strong>new branch</strong> using the <a href="http://yakiloo.com/getting-started-git-flow/">Git Flow Standard</a> conventions</li>
+<li>Commit <strong>often</strong> and <strong>when important</strong>
+</li>
+<li>
+<strong>DO NOT CHANGE</strong> ANY OF THESE (without making a new branch for <em>that</em> change):
+
+<ul>
+<li><code>*.gemspec</code></li>
+<li><code>Rakefile</code></li>
+<li><code>.rvmrc</code></li>
+<li><code>.gitignore</code></li>
+<li>Any part of the git history</li>
+</ul>
+</li>
+<li>
+<strong>Write tests</strong> specifically for the changes you've made, if no test exist</li>
+<li>
+<strong>Push</strong> your feature or hotfix branch to Github.</li>
+<li>Make a <strong>Pull Request</strong>
+</li>
+</ul><h2>Credits</h2>
+
+<ul>
+<li><a href="https://github.com/Sirupsen">Simon Hørup Eskildsen</a></li>
+<li><a href="mailto:%20https://github.com/henrikh">Henrik Enggaard</a></li>
+<li><a href="https://github.com/wolfwood">James Larkby-Lahet</a></li>
+</ul><h2>License</h2>
+
+<p>Copyright (c) 2013 Kurtis Rainbolt-Greene</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/krainboltgreene">krainboltgreene</a> can be found on <a href="https://github.com/krainboltgreene/time-lord">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
     </div>
 
-    <h1><a href="http://github.com/krainboltgreene/time-lord">time-lord</a>
-      <span class="small">by <a href="http://github.com/krainboltgreene">krainboltgreene</a></span></h1>
-
-    <div class="description">
-      time-lord is a ruby gem that adds extra functionality to the time class.
-    </div>
-
-    <h2>Authors</h2>
-<p>Henrik Hansen (henrikb4@gmail.com)<br/>Kurtis Rainbolt-Greene (kurtisrainboltgreene@gmail.com)<br/>Simon H. Eskildsen (sirup@sirupsen.com)<br/>James Larkby-Lahet (wolfwood@xomb.org)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>Kurtis Rainbolt-Greene (kurtisrainboltgreene@gmail.com)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/krainboltgreene/time-lord/zipball/master">zip</a> or
-      <a href="http://github.com/krainboltgreene/time-lord/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/krainboltgreene/time-lord</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/krainboltgreene/time-lord">krainboltgreene/time-lord</a>
-    </div>
-
-  </div>
-
-  
-</body>
+    
+  </body>
 </html>
