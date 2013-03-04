@@ -15,9 +15,14 @@ module TimeLord
     def difference
       beginning - ending
     end
+    alias_method :to_i, :difference
 
     def to_time
       if difference < 0 then @beginning else @ending end
+    end
+
+    def to_range
+      beginning..ending
     end
 
     def beginning
