@@ -1,1 +1,5 @@
-- 1.9.3
+language: ruby
+rvm:
+  - 1.9.3
+  - rubinius
+  - jruby
