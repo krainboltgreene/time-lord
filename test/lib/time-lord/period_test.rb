@@ -6,6 +6,10 @@ class TestTimeLordPeriod < MiniTest::Unit::TestCase
     @timestamp = Time.now
   end
 
+  def teardown
+    Timecop.return # undo any time changes
+  end
+
   def test_to_i_positive
     expected = -100
     actual = TimeLord::Period.new(@timestamp - 100, @timestamp).difference
@@ -39,6 +43,13 @@ class TestTimeLordPeriod < MiniTest::Unit::TestCase
   def test_in_words_future_year
     expected = "1 year from now"
     actual = 1.year.from_now.in_words
+    assert_equal(expected, actual)
+  end
+
+  def test_in_words_between_11_months_and_year
+    expected = "11 months from now"
+    Timecop.freeze(Time.local(2013, 1, 1))
+    actual = Time.local(2013, 12, 3).ago.in_words
     assert_equal(expected, actual)
   end
 
