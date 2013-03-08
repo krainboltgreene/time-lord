@@ -17,9 +17,8 @@ Bundler::GemHelper.install_tasks
 desc "Run all of the tests"
 Rake::TestTask.new do |config|
   config.libs << 'test'
-  config.pattern = 'test/**/*_test*'
+  config.pattern = 'test/**/*_test.rb'
   config.verbose = true
-  config.warning = true
 end
 
 desc "Generate all of the docs"
