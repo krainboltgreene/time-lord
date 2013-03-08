@@ -1,4 +1,4 @@
-require 'minitest/autorun'
+
 require 'helper'
 
 class TestTimeLord < MiniTest::Unit::TestCase
