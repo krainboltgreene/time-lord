@@ -2,10 +2,10 @@ module TimeLord
   class Scale
     include Units
 
-    attr_accessor :absolute
+    attr_writer :absolute
 
-    def initialize(absolute)
-      self.absolute = absolute
+    def initialize(value)
+      self.absolute = value
     end
 
     def to_value
@@ -14,6 +14,10 @@ module TimeLord
 
     def to_unit
       timemap.last
+    end
+
+    def absolute
+      @absolute.abs
     end
 
     private
