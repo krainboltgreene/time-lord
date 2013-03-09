@@ -1,5 +1,4 @@
-
-require_relative '../../../helper'
+require 'helper'
 
 class TestTimeLordExtentionsTime < MiniTest::Unit::TestCase
   def setup

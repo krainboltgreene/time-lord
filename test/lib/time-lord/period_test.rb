@@ -1,4 +1,3 @@
-
 require 'helper'
 
 class TestTimeLordPeriod < MiniTest::Unit::TestCase

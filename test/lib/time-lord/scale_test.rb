@@ -1,4 +1,3 @@
-
 require 'helper'
 
 class TestTimeLordScale < MiniTest::Unit::TestCase
