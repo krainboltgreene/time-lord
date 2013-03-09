@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
-require 'bundler/gem_tasks'
-require 'rake/clean'
-require 'rake/testtask'
-require 'yard'
+require "bundler/gem_tasks"
+require "rake/clean"
+require "rake/testtask"
+require "yard"
 
 begin
   Bundler.setup :default, :development
@@ -16,15 +16,14 @@ Bundler::GemHelper.install_tasks
 
 desc "Run all of the tests"
 Rake::TestTask.new do |config|
-  config.libs << 'test'
-  config.pattern = 'test/**/*_test.rb'
-  config.verbose = true
+  config.libs << "test"
+  config.pattern = "test/**/*_test.rb"
 end
 
 desc "Generate all of the docs"
 YARD::Rake::YardocTask.new do |config|
-  config.files = Dir['lib/**/*.rb']
+  config.files = Dir["lib/**/*.rb"]
 end
 
-desc 'Default: run tests, and generate docs'
+desc "Default: run tests, and generate docs"
 task :default => [ :test, :yard ]
