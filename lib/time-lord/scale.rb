@@ -1,4 +1,8 @@
 module TimeLord
+  # We use the TimeLord::Scale class to handle turning a number of seconds into
+  # an reasonable unit of time. For instance 60 seconds should really be denoted
+  # as 1 minute. The same applies for 100 seconds, because it's not enough to
+  # go over 120 seconds (or 2 minutes).
   class Scale
     include Units
 
@@ -8,14 +12,20 @@ module TimeLord
       self.absolute = value
     end
 
+    # Here we turn it into the lowest common unit of measurement. Example: 100
+    # (seconds) turned into 1 (minute).
     def to_value
       timemap.first
     end
 
+    # This method turns the value into a word that decribes the lowest common
+    # unit of measurement. Example: 100 (seconds) turned into "minute" (1).
     def to_unit
       timemap.last
     end
 
+    # While the class can be passed any value, we only care about the absolute
+    # of that integer.
     def absolute
       @absolute.abs
     end
