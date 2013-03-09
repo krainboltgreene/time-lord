@@ -36,15 +36,11 @@ module TimeLord
     private
 
     def value
-      Scale.new(absolute).to_value
+      Scale.new(difference).to_value
     end
 
     def unit
-      Scale.new(absolute).to_unit
-    end
-
-    def absolute
-      difference.abs
+      Scale.new(difference).to_unit
     end
 
     def tense
