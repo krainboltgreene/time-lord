@@ -1,14 +1,6 @@
 require 'helper'
 
-class TestTimeLordPeriod < MiniTest::Unit::TestCase
-  def setup
-    @timestamp = Time.now
-  end
-
-  def teardown
-    Timecop.return # undo any time changes
-  end
-
+class TestTimeLordPeriod < TestCase
   def test_to_i_positive
     expected = -100
     actual = TimeLord::Period.new(@timestamp - 100, @timestamp).difference
@@ -22,14 +14,23 @@ class TestTimeLordPeriod < MiniTest::Unit::TestCase
   end
 
   def test_from
-    expect = "some time period from a to b"
-    actual = 1.hour.from(@timestamp)
+    expected = 946688401
+    actual = 1.hour.from(@timestamp).beginning
+    assert_equal(expected, actual)
+
+
+    expected = 946684801
+    actual = 1.hour.from(@timestamp).ending
     assert_equal(expected, actual)
   end
 
   def test_to
-    expect = "some time period from a to b"
-    actual = 1.hour.to(@timestamp)
+    expected = 946681201
+    actual = 1.hour.to(@timestamp).beginning
+    assert_equal(expected, actual)
+
+    expected = 946684801
+    actual = 1.hour.to(@timestamp).ending
     assert_equal(expected, actual)
   end
 
