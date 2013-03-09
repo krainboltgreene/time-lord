@@ -27,6 +27,13 @@ Periods, if forced into strings or integers, represent the number of seconds bet
 1.hour.ago.to_i #=> -3600
 ```
 
+You can also specify periods from other periods:
+
+``` ruby
+1.hour.from(1.day.ago) #=>
+1.hour.till(100.years.from_now) #=>
+```
+
 Obviously Periods act a lot like a Range and can be coerced into one:
 
 ``` ruby

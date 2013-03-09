@@ -21,6 +21,18 @@ class TestTimeLordPeriod < MiniTest::Unit::TestCase
     assert_equal(expected, actual)
   end
 
+  def test_from
+    expect = "some time period from a to b"
+    actual = 1.hour.from(@timestamp)
+    assert_equal(expected, actual)
+  end
+
+  def test_to
+    expect = "some time period from a to b"
+    actual = 1.hour.to(@timestamp)
+    assert_equal(expected, actual)
+  end
+
   def test_in_words_second
     expected = "1 second ago"
     actual = 1.second.ago.in_words
