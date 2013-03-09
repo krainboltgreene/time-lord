@@ -90,8 +90,8 @@ $ ruby -e "1.hour.ago.to_words"
 Issues & Documentation
 ----------------------
 
-* [Documentation](https://github.com/krainboltgreene/time-lord/wiki)
-* [Issues](https://github.com/krainboltgreene/time-lord/issues)
+  * [Documentation](http://rubydoc.info/gems/time-lord)
+  * [Issues](https://github.com/krainboltgreene/time-lord/issues)
 
 Absolutely feel free to contribute, please!
 
