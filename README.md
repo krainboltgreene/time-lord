@@ -11,6 +11,7 @@ time-lord
 Underneath the covers `time-lord` gives you single purpose objects for handling the more complex parts of Time & Space.
 Specifically conversion, periods between two points, and scaling.
 
+
 Examples
 --------
 
@@ -103,35 +104,30 @@ Changelog
 
 * Changed the name of the gem, added some tests
 
-**v0.1.0**
+**1.0.0**
 
-* I didn't track changelogs when this version was released
+  * Initial release
 
 
 Contributing
 ------------
 
-* **Fork** the repository
-* **Clone the repository** locally, or **edit via Github**
-* Create a **new branch** using the [Git Flow Standard](http://yakiloo.com/getting-started-git-flow/) conventions
-* Commit **often** and **when important**
-* **DO NOT CHANGE** ANY OF THESE (without making a new branch for *that* change):
-  * `*.gemspec`
-  * `Rakefile`
-  * `.rvmrc`
-  * `.gitignore`
-  * Any part of the git history
-* **Write tests** specifically for the changes you've made, if no test exist
-* **Push** your feature or hotfix branch to Github.
-* Make a **Pull Request**
+  1. Fork it
+  2. Create your feature branch (`git checkout -b my-new-feature`)
+  3. Commit your changes (`git commit -am 'Add some feature'`)
+  4. Push to the branch (`git push origin my-new-feature`)
+  5. Create new Pull Request
 
 
 Credits
 -------
 
-* [Simon Hørup Eskildsen](https://github.com/Sirupsen)
-* [Henrik Enggaard](mailto: https://github.com/henrikh)
-* [James Larkby-Lahet](https://github.com/wolfwood)
+  * [Simon Hørup Eskildsen](https://github.com/Sirupsen) for the original work on time-ago-in-words gem
+  * [Henrik Enggaard](https://github.com/henrikh) for very useful commits pre-1.0
+  * [James Larkby-Lahet](https://github.com/wolfwood) for very useful commits pre-1.0
+  * [Nick Merwin](https://github.com/nickmerwin) for unfucking the coveralls setup
+  * [Christian Tietze](https://github.com/DivineDominion) for pointing out a mistake in the readme
+  * [Blaž Hrastnik](https://github.com/archSeer) for noticing and contributing tests for a bug in the timing logic past a month
 
 
 License
