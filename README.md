@@ -100,9 +100,7 @@ Absolutely feel free to contribute, please!
 Changelog
 ---------
 
-**v0.1.5**
 
-* Changed the name of the gem, added some tests
 
 **1.0.0**
 
