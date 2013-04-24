@@ -52,7 +52,7 @@ Periods also have a special `Period#to_words` method:
 
 ``` ruby
 1.hour.ago.to_words #=> "1 hour ago"
-200.minutes.ago.to_words #=> "3 hour ago"
+200.minutes.ago.to_words #=> "3 hours ago"
 ```
 
 Of course you can also do fun Time math:
