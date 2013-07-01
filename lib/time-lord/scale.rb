@@ -20,6 +20,7 @@ module TimeLord
 
     def timemap
       case absolute
+      when 0               then [absolute, "seconds"]
       when SECOND...MINUTE then [absolute, pluralized_word("second", plurality?(absolute)) || "second"]
       when MINUTE...HOUR   then as(MINUTE, "minute")
       when HOUR...DAY      then as(HOUR, "hour")

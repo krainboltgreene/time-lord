@@ -8,7 +8,7 @@ module TimeLord
     end
 
     def to_words
-      "#{value} #{unit} #{tense}"
+      value.zero? ? "less than a second away" : "#{value} #{unit} #{tense}"
     end
     alias_method :in_words, :to_words
 
@@ -48,7 +48,7 @@ module TimeLord
     end
 
     def tense
-      if difference < 0 then "ago" else "from now" end
+      if difference <= 0 then "ago" else "from now" end
     end
   end
 end
