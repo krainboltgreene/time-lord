@@ -33,6 +33,18 @@ class TestTimeLordPeriod < MiniTest::Unit::TestCase
     assert_equal(expected, actual)
   end
 
+  def test_in_words_less_than_second_ago
+    expected = "less than a second away"
+    actual = Time.now.ago.in_words
+    assert_equal(expected, actual)
+  end
+
+  def test_in_words_less_than_second_from
+    expected = "less than a second away"
+    actual = 0.seconds.from_now.in_words
+    assert_equal(expected, actual)
+  end
+
   def test_in_words_second
     expected = "1 second ago"
     actual = 1.second.ago.in_words
