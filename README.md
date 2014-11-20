@@ -90,7 +90,7 @@ gem 'time-lord', '~> 1.0'
 To make sure you did everything right, just do the following:
 
 ```
-$ ruby -e "1.hour.ago.to_words"
+$ ruby -e "require 'time-lord'; puts 1.hour.ago.to_words"
 > 1 hour ago
 ```
 
