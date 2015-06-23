@@ -18,19 +18,25 @@ class TestTimeLordPeriod < TestCase
     actual = 1.hour.from(@timestamp).beginning
     assert_equal(expected, actual)
 
-
     expected = 946684801
     actual = 1.hour.from(@timestamp).ending
     assert_equal(expected, actual)
   end
 
-  def test_to
+  def test_from_with_expression
+    binding.pry
+    expected = @timestamp + 2.weeks + 2.days
+    actual = 2.days.after 2.weeks.from_now
+    assert_equal(expected, actual)
+  end
+
+  def test_before
     expected = 946681201
-    actual = 1.hour.to(@timestamp).beginning
+    actual = 1.hour.before(@timestamp).beginning
     assert_equal(expected, actual)
 
     expected = 946684801
-    actual = 1.hour.to(@timestamp).ending
+    actual = 1.hour.before(@timestamp).ending
     assert_equal(expected, actual)
   end
 

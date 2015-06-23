@@ -2,6 +2,14 @@ module TimeLord
   # The TimeLord::Period class handles the concept of two points in time and
   # their relation to each other as a range. Conceptually it should duck type
   # the Range class
+  #
+  # In an effort to keep things clear we codify these terms:
+  #
+  #   - from/after: beginning is bigger (later) than ending, AKA 5 days
+  #     from now is my birthday; AKA 10 seconds after midnight we attack.
+  #   - ago/before: beginning is smaller (earlier) than ending, AKA 30 seconds
+  #     ago my water broke; AKA for 1 year before last weekend I was a baseball
+  #     player
   class Period
     attr_writer :beginning, :ending
 
@@ -36,6 +44,14 @@ module TimeLord
       beginning..ending
     end
 
+    def +(difference)
+      if difference.positive?
+        self.
+      else
+
+      end
+    end
+
     # We want the absolute value of the timestamp if we're going to be reading
     # the `@beginning` data. This is so we can do easy math elsewhere, without
     # peppering the code with `*#to_i()`.
@@ -45,6 +61,26 @@ module TimeLord
 
     def ending
       @ending.to_i
+    end
+
+    # At some points we'll want to get the actual timestamp for the periods,
+    # but that's usually secondary
+    def begins
+      @beginning
+    end
+
+    def ends
+      @ending
+    end
+
+    # Sometimes we want to know if the period is in the past or future, which
+    # is based on the time difference.
+    def future?
+      difference.positive?
+    end
+
+    def past?
+      difference.negative?
     end
 
     private

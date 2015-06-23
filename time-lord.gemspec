@@ -3,26 +3,26 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'time-lord/version'
 
-Gem::Specification.new do |gem|
-  gem.name          = "time-lord"
-  gem.version       = TimeLord::VERSION
-  gem.authors       = ["Kurtis Rainbolt-Greene", "Simon Hørup Eskildsen"]
-  gem.email         = ["me@kurtisrainboltgreene.name","sirup@sirupsen.com"]
-  gem.summary       = %q{Managing concepts of time and space in Ruby}
-  gem.description   = gem.summary
-  gem.homepage      = "http://krainboltgreene.github.com/time-lord"
+Gem::Specification.new do |spec|
+  spec.name          = "time-lord"
+  spec.version       = TimeLord::VERSION
+  spec.authors       = ["Kurtis Rainbolt-Greene", "Simon Hørup Eskildsen"]
+  spec.email         = ["me@kurtisrainboltgreene.name","sirup@sirupsen.com"]
+  spec.summary       = %q{Managing concepts of time and space in Ruby}
+  spec.description   = spec.summary
+  spec.homepage      = "http://krainboltgreene.github.com/time-lord"
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = ["lib"]
+  spec.files         = `git ls-files`.split($/)
+  spec.executables   = spec.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
 
-  gem.add_development_dependency 'rake'
-  gem.add_development_dependency 'yard'
-  gem.add_development_dependency 'kramdown'
-  gem.add_development_dependency 'pry'
-  gem.add_development_dependency 'coveralls'
-  gem.add_development_dependency 'timecop'
-  # gem.add_runtime_dependency 'gemname', '~> 1.0'
-  # gem.add_development_dependency 'gemname', '~> 1.0'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'yard'
+  spec.add_development_dependency 'kramdown'
+  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'coveralls'
+  spec.add_development_dependency 'timecop'
+  # spec.add_runtime_dependency 'gem', '~> 1.0'
+  # spec.add_development_dependency 'gem', '~> 1.0'
 end

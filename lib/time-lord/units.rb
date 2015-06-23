@@ -14,6 +14,8 @@ module TimeLord
     # be entirely different sizes from other months. This attempts to average it
     # out, because a standard month is 4 weeks long.
     MONTH      = WEEK    * 4
-    YEAR       = MONTH   * 12
+    # The same goes for years, so we actually do it by the standard calendar
+    # year length.
+    YEAR       = DAY * 365
   end
 end

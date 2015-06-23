@@ -9,12 +9,22 @@ class Integer
   def from(timestamp = Time.now)
     time_convert(timestamp + self)
   end
+  alias_method :after, :from
   alias_method :from_now, :from
 
-  def to(timestamp = Time.now)
+  def before(timestamp = Time.now)
     time_convert(timestamp - self)
   end
-  alias_method :ago, :to
+  alias_method :ago, :before
+  alias_method :to_now, :before
+
+  def positive?
+    self > 0
+  end
+
+  def negative?
+    self < 0
+  end
 
   private
 
