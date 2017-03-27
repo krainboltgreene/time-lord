@@ -1,3 +1,5 @@
+**NOTICE**: This project is dead, feel free to take the name on rubygems.
+
 time-lord
 =========
 
