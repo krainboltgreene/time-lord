@@ -107,7 +107,13 @@ Absolutely feel free to contribute, please!
 Changelog
 ---------
 
+**1.1.0**
 
+  * Adding `Integer#from()` and `Integer#till()` to calculate both points in a period easily.
+  * The Coverall guys fixed up my setup.
+  * Cleaned up the readme
+  * Added and fixed a bug that dealt with month exactness
+  * Documented a whole hell of a lot
 
 **1.0.0**
 

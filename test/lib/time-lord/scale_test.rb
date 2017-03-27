@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestTimeLordScale < MiniTest::Unit::TestCase
+class TestTimeLordScale < TestCase
   def test_to_value_single
     expected = 1
     actual = TimeLord::Scale.new(3600).to_value

@@ -6,11 +6,29 @@ class Integer
     alias_method "#{constant.downcase}s", constant.downcase
   end
 
-  def ago
-    TimeLord::Time.new(Time.now - self).period
+  def from(timestamp = Time.now)
+    time_convert(timestamp + self)
+  end
+  alias_method :after, :from
+  alias_method :from_now, :from
+
+  def before(timestamp = Time.now)
+    time_convert(timestamp - self)
+  end
+  alias_method :ago, :before
+  alias_method :to_now, :before
+
+  def positive?
+    self > 0
   end
 
-  def from_now
-    TimeLord::Time.new(Time.now + self).period
+  def negative?
+    self < 0
+  end
+
+  private
+
+  def time_convert(timestamp)
+    TimeLord::Time.new(timestamp).period
   end
 end

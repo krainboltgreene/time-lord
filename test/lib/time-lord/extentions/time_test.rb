@@ -1,10 +1,6 @@
 require 'helper'
 
-class TestTimeLordExtentionsTime < MiniTest::Unit::TestCase
-  def setup
-    @timestamp = Time.now
-  end
-
+class TestTimeLordExtentionsTime < TestCase
   def oldstamp(minus)
     @timestamp - minus
   end

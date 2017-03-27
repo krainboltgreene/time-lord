@@ -1,9 +1,6 @@
 require 'helper'
 
-class TestTimeLordTime < MiniTest::Unit::TestCase
-  def setup
-    @timestamp = Time.now
-  end
+class TestTimeLordTime < TestCase
 
   def test_to_words_past_seconds
     expected = "50 seconds ago"

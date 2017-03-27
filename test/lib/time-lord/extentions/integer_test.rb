@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestTimeLordExtentionsInteger < MiniTest::Unit::TestCase
+class TestTimeLordExtentionsInteger < TestCase
   def test_minutes
     expected = 1
     actual = 1.second
